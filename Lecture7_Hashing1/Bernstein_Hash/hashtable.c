@@ -115,11 +115,11 @@ void htab_print(htab_t *h) {
 }
 
 // Delete an item with key from the hash table.
-// pre: htab_find(h, key) != NULL 
-// post: htab_find(h, key) == NULL 
+// pre: htab_find(h, key) != NULL
+// post: htab_find(h, key) == NULL
 void htab_delete(htab_t *h, char *key) {
     item_t *head = htab_bucket(h, key);
-    item_t *current = head; 
+    item_t *current = head;
     item_t *previous = NULL;
     while (current != NULL) {
         if (strcmp(current->key, key) == 0) {
